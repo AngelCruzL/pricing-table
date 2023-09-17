@@ -51,6 +51,27 @@ body {
   width: min(100% - 2rem, 60rem);
 }
 
+.inverted {
+  background: $color-primary-400;
+  color: $color-neutral-100;
+}
+
+.button {
+  cursor: pointer;
+  justify-self: center;
+  border: 0;
+  padding: 1em 1.5em;
+  background-color: $color-primary-400;
+  color: $color-neutral-100;
+  font-weight: $fw-700;
+  text-transform: uppercase;
+
+  .inverted & {
+    background-color: $color-neutral-100;
+    color: $color-primary-400;
+  }
+}
+
 #page-heading {
   margin-block: $size-32;
   color: $color-primary-400;
@@ -72,6 +93,10 @@ body {
     color: $color-primary-400;
     font-weight: $fw-700;
     text-transform: uppercase;
+
+    .inverted & {
+      color: $color-neutral-100;
+    }
   }
 
   &__feature-list {
@@ -98,15 +123,4 @@ body {
       font-weight: $fw-400;
     }
   }
-}
-
-.button {
-  cursor: pointer;
-  justify-self: center;
-  border: 0;
-  padding: 1em 1.5em;
-  background-color: $color-primary-400;
-  color: $color-neutral-100;
-  font-weight: $fw-700;
-  text-transform: uppercase;
 }
