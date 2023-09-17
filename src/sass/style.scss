@@ -38,15 +38,75 @@ $size-36: 2.25rem;
 }
 
 body {
+  background-color: $color-neutral-100;
+  color: $color-neutral-900;
   font-family: $ff-sans;
   font-size: $fs-400;
   font-weight: $fw-400;
-  background-color: $color-neutral-100;
-  color: $color-neutral-900;
   text-align: center;
 }
 
 .container {
   margin-inline: auto;
   width: min(100% - 2rem, 60rem);
+}
+
+#page-heading {
+  margin-block: $size-32;
+  color: $color-primary-400;
+  font-size: $fs-900;
+}
+
+.pricing-plans {
+  display: flex;
+  border: $size-8 solid $color-primary-400;
+}
+
+.tier {
+  flex: 1;
+  display: grid;
+  gap: $size-20;
+  padding: $size-36;
+
+  &__title {
+    color: $color-primary-400;
+    font-weight: $fw-700;
+    text-transform: uppercase;
+  }
+
+  &__feature-list {
+    list-style: none;
+  }
+
+  &__list-item {
+    &:not(:last-child)::after {
+      content: '';
+      display: block;
+      margin-block: $size-20;
+      block-size: 1px;
+      background-color: $color-neutral-900;
+      opacity: 0.2;
+    }
+  }
+
+  &__price {
+    font-size: $fs-800;
+    font-weight: $fw-700;
+
+    span {
+      font-size: $fs-600;
+      font-weight: $fw-400;
+    }
+  }
+}
+
+.button {
+  cursor: pointer;
+  justify-self: center;
+  border: 0;
+  padding: 1em 1.5em;
+  background-color: $color-primary-400;
+  color: $color-neutral-100;
+  font-weight: $fw-700;
+  text-transform: uppercase;
 }
